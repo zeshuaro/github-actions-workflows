@@ -3,36 +3,36 @@ version: v1
 labels:
   - label: enhancement
     matcher:
-      title: "^feat:.*"
+      branch: "^feat/.*"
 
   - label: bug
     matcher:
-      title: "^fix:.*"
+      branch: "^fix/.*"
 
   - label: chore
     matcher:
-      title: "^chore:.*"
+      branch: "^chore/.*"
 
   - label: ci
     matcher:
-      title: "^ci:.*"
+      branch: "^ci/.*"
 
   - label: documentation
     matcher:
-      title: "^docs:.*"
+      branch: "^docs/.*"
 
   - label: refactor
     matcher:
-      title: "^refactor:.*"
+      branch: "^refactor/.*"
 
   - label: revert
     matcher:
-      title: "^(revert:|Revert ).*"
+      branch: "^(revert/|revert-).*"
 
   - label: style
     matcher:
-      title: "^style:.*"
+      branch: "^style/.*"
 
   - label: test
     matcher:
-      title: "^test:.*"
+      branch: "^test/.*"
