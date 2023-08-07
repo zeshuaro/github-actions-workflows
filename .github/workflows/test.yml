@@ -23,5 +23,5 @@ jobs:
 
       - name: Validate workflows 🧪
         run: |
-          find workflows -type f \( -iname \*.yaml -o -iname \*.yml \) \
+          find .github/workflows -type f \( -iname \*.yaml -o -iname \*.yml \) \
             | xargs -I {} action-validator --verbose {}
