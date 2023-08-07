@@ -1,0 +1,29 @@
+name: Label pull request
+
+on:
+  workflow_call:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  label:
+    name: Label
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Get labeler config 📄
+        env:
+          CONFIG_FILE: .github/pr-labeler.yml
+        run: |
+          if [ ! -f ${{ env.CONFIG_FILE }} ]; then
+            curl --create-dirs -O --output-dir .github https://raw.githubusercontent.com/zeshuaro/github-actions-workflows/${{ env.CONFIG_FILE }}
+          fi
+
+      - name: Label pull request 🏷️
+        uses: TimonVS/pr-labeler-action@v4.1.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
