@@ -27,7 +27,7 @@ labels:
 
   - label: revert
     matcher:
-      title: "^(revert:|Revert\s).*"
+      title: "^(revert:|Revert ).*"
 
   - label: style
     matcher:
