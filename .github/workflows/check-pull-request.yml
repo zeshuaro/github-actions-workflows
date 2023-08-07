@@ -1,0 +1,17 @@
+name: Check pull request
+
+on:
+  workflow_call:
+
+jobs:
+  check:
+    name: Check title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Semantic pull request 💬
+        uses: amannn/action-semantic-pull-request@v5.2.0
+        with:
+          ignoreLabels: revert
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
