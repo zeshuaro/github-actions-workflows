@@ -2,6 +2,13 @@ name: Check pull request
 
 on:
   workflow_call:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - labeled
+      - unlabeled
+      - synchronize
 
 jobs:
   check:
