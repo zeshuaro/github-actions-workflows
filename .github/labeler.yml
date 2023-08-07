@@ -1,0 +1,38 @@
+version: v1
+
+labels:
+  - label: enhancement
+    matcher:
+      title: "^feat:.*"
+
+  - label: bug
+    matcher:
+      title: "^fix:.*"
+
+  - label: chore
+    matcher:
+      title: "^chore:.*"
+
+  - label: ci
+    matcher:
+      title: "^ci:.*"
+
+  - label: documentation
+    matcher:
+      title: "^docs:.*"
+
+  - label: refactor
+    matcher:
+      title: "^refactor:.*"
+
+  - label: revert
+    matcher:
+      title: "^(revert:|Revert\s).*"
+
+  - label: style
+    matcher:
+      title: "^style:.*"
+
+  - label: test
+    matcher:
+      title: "^test:.*"
