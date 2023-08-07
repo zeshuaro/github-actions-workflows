@@ -1,0 +1,16 @@
+name: Lock threads
+
+on:
+  workflow_call:
+
+jobs:
+  lock:
+    name: Lock issues and pull requests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lock 🔒
+        uses: dessant/lock-threads@v4.0.1
+        with:
+          issue-inactive-days: 14
+          pr-inactive-days: 14
