@@ -29,5 +29,5 @@ jobs:
       - name: Lock 🔒
         uses: dessant/lock-threads@v4.0.1
         with:
-          issue-inactive-days: 14
-          pr-inactive-days: 14
+          issue-inactive-days: 7
+          pr-inactive-days: 7
