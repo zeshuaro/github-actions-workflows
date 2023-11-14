@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Lock 🔒
-        uses: dessant/lock-threads@v4.0.1
+        uses: dessant/lock-threads@v5.0.0
         with:
           issue-inactive-days: 7
           pr-inactive-days: 7
