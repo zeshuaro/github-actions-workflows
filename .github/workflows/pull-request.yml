@@ -32,3 +32,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           config-repo: zeshuaro/github-actions-workflows
+
+  check-typos:
+    name: Check typos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Check spellings 📝
+        uses: crate-ci/typos@v1.16.23
