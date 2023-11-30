@@ -40,5 +40,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
+      - uses: taiki-e/install-action@v2.21.23
+        with:
+          tool: typos-cli
+
       - name: Check spellings 📝
-        uses: crate-ci/typos@v1.16.23
+        run: typos
