@@ -36,17 +36,9 @@ jobs:
   check-typos:
     name: Check typos
     runs-on: ubuntu-latest
-    env:
-      CONFIG_PATH: /tmp/_typos.toml
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Download config 📄
-        run: curl -sL -o ${CONFIG_PATH} https://raw.githubusercontent.com/zeshuaro/github-actions-workflows/main/.github/_typos.toml
-
       - name: Check spellings 📝
         uses: crate-ci/typos@v1.16.23
-        with:
-          config: ${{ env.CONFIG_PATH }}
