@@ -1,0 +1,6 @@
+[files]
+extend-exclude = ["**/*.json", "**/*.xib", "**/*.pbxproj", "**/*.storyboard"]
+
+[type.po]
+extend-glob = ["*.po"]
+check-file = false
