@@ -2,12 +2,20 @@ name: Flutter integration tests
 
 on:
   workflow_call:
-  pull_request_target:
+    inputs:
+      working-directory:
+        default: "."
+        required: false
+        type: string
 
 jobs:
   integration-test:
     name: Integration test
     runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
 
     strategy:
       matrix:
