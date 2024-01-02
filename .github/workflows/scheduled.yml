@@ -31,3 +31,21 @@ jobs:
         with:
           issue-inactive-days: 7
           pr-inactive-days: 7
+
+  update-license:
+    name: Update license year
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update license year 🪪
+        uses: FantasticFiasco/action-update-license-year@v3.0.2
+        with:
+          token: ${{ secrets.PAT }}
+          commitTitle: "docs(license): update copyright year to {{ currentYear }}"
+          prTitle: "docs(license): update copyright year to {{ currentYear }}"
+          labels: documentation
