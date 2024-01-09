@@ -2,6 +2,9 @@ name: Scheduled actions
 
 on:
   workflow_call:
+    secrets:
+      PAT:
+        required: true
 
 jobs:
   close-stale:
@@ -45,7 +48,7 @@ jobs:
       - name: Update license year 🪪
         uses: FantasticFiasco/action-update-license-year@v3.0.2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT }}
           commitTitle: "docs(license): update copyright year to {{ currentYear }}"
           prTitle: "docs(license): update copyright year to {{ currentYear }}"
           labels: documentation
