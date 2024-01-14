@@ -36,8 +36,8 @@ jobs:
       - name: Lock 🔒
         uses: dessant/lock-threads@v5.0.1
         with:
-          issue-inactive-days: 7
-          pr-inactive-days: 7
+          issue-inactive-days: 30
+          pr-inactive-days: 30
 
   update-license:
     name: Update license year
