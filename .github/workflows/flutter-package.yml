@@ -17,6 +17,9 @@ on:
       GOOGLE_SERVICE_ACCOUNT_KEY:
         description: The Google service account key to use for publishing the package
         required: true
+      CODECOV_TOKEN:
+        description: The Codecov token to upload test coverage report
+        required: true
 
 jobs:
   test:
@@ -43,7 +46,9 @@ jobs:
           flutter test --coverage
 
       - name: Upload coverage report 📡
-        uses: codecov/codecov-action@v3.1.6
+        uses: codecov/codecov-action@v4.0.0
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   lint:
     name: Lint
