@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Labeler 🏷️
-        uses: fuxingloh/multi-labeler@v3.0.0
+        uses: fuxingloh/multi-labeler@v4.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           config-repo: zeshuaro/github-actions-workflows
