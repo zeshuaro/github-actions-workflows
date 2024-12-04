@@ -35,7 +35,7 @@ jobs:
         uses: kuhnroyal/flutter-fvm-config-action@v2
 
       - name: Setup Flutter 💻
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           channel: ${{ steps.fvm-config.outputs.FLUTTER_CHANNEL }}
           cache: true
@@ -63,7 +63,7 @@ jobs:
         uses: kuhnroyal/flutter-fvm-config-action@v2
 
       - name: Setup Flutter 💻
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           channel: ${{ steps.fvm-config.outputs.FLUTTER_CHANNEL }}
           cache: true
@@ -100,7 +100,7 @@ jobs:
         uses: kuhnroyal/flutter-fvm-config-action@v1.2.0
 
       - name: Setup Flutter 💻
-        uses: subosito/flutter-action@v2.17.0
+        uses: subosito/flutter-action@v2.18.0
         with:
           channel: ${{ steps.fvm-config.outputs.FLUTTER_CHANNEL }}
           cache: true
