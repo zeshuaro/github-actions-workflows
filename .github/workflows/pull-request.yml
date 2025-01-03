@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check spellings 📝
-        uses: crate-ci/typos@v1.29.3
+        uses: crate-ci/typos@v1.29.4
