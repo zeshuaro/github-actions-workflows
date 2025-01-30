@@ -16,7 +16,7 @@ on:
         required: true
       GOOGLE_SERVICE_ACCOUNT_KEY:
         description: The Google service account key to use for publishing the package
-        required: true
+        required: false
       CODECOV_TOKEN:
         description: The Codecov token to upload test coverage report
         required: true
