@@ -37,26 +37,10 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4.2.2
 
-      - name: Get project Flutter version 🏷️
-        id: fvm-config
-        uses: kuhnroyal/flutter-fvm-config-action@v3.1
-
       - name: Setup Flutter ⚙️
-        uses: subosito/flutter-action@v2.18.0
+        uses: kuhnroyal/flutter-fvm-config-action/setup@v3.1
         with:
-          flutter-version: ${{ steps.fvm-config.outputs.FLUTTER_VERSION }}
           cache: true
-          cache-key: ${{ runner.os }}-flutter-${{ steps.fvm-config.outputs.FLUTTER_VERSION }}-${{ hashFiles('**/pubspec.lock') }}
-
-      - name: Cache Pub 💾
-        uses: actions/cache@v4.2.0
-        with:
-          path: |
-            **/.pub-cache
-            **/.dart_tool
-          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pub-
 
       - name: Patch for Linux build 🩹
         if: ${{ matrix.type == 'linux' }}
