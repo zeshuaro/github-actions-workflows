@@ -59,7 +59,7 @@ jobs:
           persist-credentials: false
 
       - name: Update license year 🪪
-        uses: FantasticFiasco/action-update-license-year@v3.0.3
+        uses: FantasticFiasco/action-update-license-year@v3.0.4
         with:
           token: ${{ steps.app-token.outputs.token }}
           commitTitle: "docs(license): update copyright year to {{ currentYear }}"
