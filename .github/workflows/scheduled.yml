@@ -39,29 +39,29 @@ jobs:
           issue-inactive-days: 30
           pr-inactive-days: 30
 
-  update-license:
-    name: Update license year
-    runs-on: ubuntu-latest
+  # update-license:
+  #   name: Update license year
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Create GitHub App token 🔑
-        id: app-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+  #   steps:
+  #     - name: Create GitHub App token 🔑
+  #       id: app-token
+  #       uses: actions/create-github-app-token@v2
+  #       with:
+  #         app-id: ${{ secrets.GH_APP_ID }}
+  #         private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
-      - name: Checkout 🛎️
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-          token: ${{ steps.app-token.outputs.token }}
-          persist-credentials: false
+  #     - name: Checkout 🛎️
+  #       uses: actions/checkout@v6
+  #       with:
+  #         fetch-depth: 0
+  #         token: ${{ steps.app-token.outputs.token }}
+  #         persist-credentials: false
 
-      - name: Update license year 🪪
-        uses: FantasticFiasco/action-update-license-year@v3.0.4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          commitTitle: "docs(license): update copyright year to {{ currentYear }}"
-          prTitle: "docs(license): update copyright year to {{ currentYear }}"
-          labels: documentation
+  #     - name: Update license year 🪪
+  #       uses: FantasticFiasco/action-update-license-year@v3.0.4
+  #       with:
+  #         token: ${{ steps.app-token.outputs.token }}
+  #         commitTitle: "docs(license): update copyright year to {{ currentYear }}"
+  #         prTitle: "docs(license): update copyright year to {{ currentYear }}"
+  #         labels: documentation
