@@ -3,6 +3,10 @@ name: Flutter package
 on:
   workflow_call:
     inputs:
+      run-build-runner:
+        description: Whether to run the build runner step
+        required: false
+        type: boolean
       release:
         description: Whether to run the release step
         required: true
@@ -38,6 +42,9 @@ jobs:
       - name: Run tests 🧪
         run: |
           flutter pub get
+          if [ "${{ inputs.run-build-runner }}" == "true" ]; then
+            flutter dart run build_runner build --delete-conflicting-outputs
+          fi
           flutter test --coverage
 
       - name: Upload coverage report 📡
@@ -61,6 +68,9 @@ jobs:
       - name: Run linting 🧪
         run: |
           flutter pub get
+          if [ "${{ inputs.run-build-runner }}" == "true" ]; then
+            flutter dart run build_runner build --delete-conflicting-outputs
+          fi
           dart format --output=none --set-exit-if-changed .
           flutter analyze
 
